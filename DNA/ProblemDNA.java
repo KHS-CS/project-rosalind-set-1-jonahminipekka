@@ -1,37 +1,33 @@
+public class CountingDNA {
+    public static void main(String[] args) {
 
-/**
- * Write a description of class ProblemDNA here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class ProblemDNA
-{
-    public static void main() {
-        // replace this string with the one from Project Rosalind
-        final String data = "AGCTTTTCATTCTGACTGCAACGGGCAATATGTCTCTGTGTGGATTAAAAAAAGAGTGTCTGATAGCAGC";
-        final int[] exampleExpectedCounts = new int[]{20,12,17,21};
-        int[] output = nucleotideCounts(data);
-        // you can copy and paste from the terminal window into 
-        //   Project Rosalind to check your answer
-        System.out.println(formatData(output));
-    }
-    
-    // This should take the array of counts and return a 
-    //   space-delimited String with the respective counts
-    //   in A C G T order
-    private static String formatData(int[] counts) {
-        String output = "";
-        for( int count : counts ) {
-            output += count + " ";
+        // Put your DNA string here (paste it from Rosalind)
+        String dna = "";
+
+        int A = 0;
+        int C = 0;
+        int G = 0;
+        int T = 0;
+
+        // Go through each letter in the string
+        for (int i = 0; i < dna.length(); i++) {
+            char letter = dna.charAt(i);
+
+            if (letter == 'A') {
+                A++;
+            }
+            if (letter == 'C') {
+                C++;
+            }
+            if (letter == 'G') {
+                G++;
+            }
+            if (letter == 'T') {
+                T++;
+            }
         }
-        return output; 
-    }
-    
-    // This should take the given string and return an int
-    //   array of how many times each letter occurs in the 
-    //   string. Ideally in A C G T order. 
-    private static int[] nucleotideCounts(String dnaString) {
-        return new int[]{20,12,17,21};
+
+        // Print results in the order Rosalind wants
+        System.out.println(A + " " + C + " " + G + " " + T);
     }
 }
