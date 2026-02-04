@@ -1,24 +1,31 @@
+public class ReverseComplement {
+    public static void main(String[] args) {
 
-/**
- * Write a description of class ProblemRNA here.
- *
- * @author (your name)
- * @version (a version number or a date)
- */
-public class ProblemREVC {
-    public static void main() {
-        // replace this string with the one from Project Rosalind
-        final String inputDNA = "AAAACCCGGT";
-        final String output = reverseComplement(inputDNA);
-        // you can copy and paste from the terminal window into 
-        //   Project Rosalind to check your answer
-        System.out.println(output);
+        // Paste your DNA string from Rosalind here
+        String dna = "";
+
+        String result = "";
+
+        // Go through the DNA string BACKWARDS
+        for (int i = dna.length() - 1; i >= 0; i--) {
+            char letter = dna.charAt(i);
+
+            // Add the complement
+            if (letter == 'A') {
+                result = result + 'T';
+            }
+            else if (letter == 'T') {
+                result = result + 'A';
+            }
+            else if (letter == 'C') {
+                result = result + 'G';
+            }
+            else if (letter == 'G') {
+                result = result + 'C';
+            }
+        }
+
+        // Print the reverse complement
+        System.out.println(result);
     }
-        
-    // This should take the given string and return a String 
-    //   where As and Ts are swapped, Cs and Gs are swapped, 
-    //   and is reversed. 
-    private static String reverseComplement(String dnaString) {
-        return "ACCGGGTTTT";
-    }    
 }
