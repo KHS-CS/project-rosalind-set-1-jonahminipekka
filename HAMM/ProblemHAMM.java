@@ -1,22 +1,24 @@
+import java.util.Scanner;
 
-/**
- * @author (your name)
- * @version (a version number or a date)
- */
-public class ProblemHAMM {
-    public static void main() {
-        // replace this string with the one from Project Rosalind
-        final String inputDNA1 = "GAGCCTACTAACGGGAT";
-        final String inputDNA2 = "CATCGTAATGACGGCCT";
-        final int output = hammingDistance(inputDNA1, inputDNA2);
-        // you can copy and paste from the terminal window into 
-        //   Project Rosalind to check your answer
-        System.out.println(output);
+public class PointMutations {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+
+        // Read the two DNA strings (one per line)
+        String s = sc.nextLine();
+        String t = sc.nextLine();
+
+        int count = 0;
+
+        // Compare letters at the same position
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != t.charAt(i)) {
+                count++;
+            }
+        }
+
+        // Print the Hamming distance
+        System.out.println(count);
     }
-        
-    // This should take the given strings and return the number
-    //   of times they differ at the same location
-    private static int hammingDistance(String a, String b) {
-        return 7;
-    }    
 }
